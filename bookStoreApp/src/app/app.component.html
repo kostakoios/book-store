@@ -3,7 +3,7 @@
 <div>
   <a routerLink="about-us">about-us</a>
   <a routerLink="how-it-works">how-it-works</a>
-  <a routerLink="auth/login">login</a>
+  <a routerLink="auth/login" [queryParams]="{'name': 'koko', 'email': 'sdaf@gd.com'}">login</a>
   <a routerLink="public">public</a>
   <a [routerLink]="['public/book-details', '1', 'author', '3']">Details from app</a>
 

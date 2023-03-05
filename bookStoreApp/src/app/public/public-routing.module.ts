@@ -9,6 +9,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 const root: Routes = [
   {
     path: 'public', component: PublicComponent, children: [
+      {path: '',redirectTo: 'all-books',pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
       {path: 'all-books', component: AllBooksComponent},
       {path: 'book-details/:id/author/:authorId', component: BookDetailsComponent}

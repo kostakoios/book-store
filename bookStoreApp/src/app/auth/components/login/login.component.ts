@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  public name: string = '';
+  public email: string = '';
+  public id: number = 0;
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(param => {
+      console.log(param);
+      this.name = param['name'];
+      this.email = param['email'];
+      this.id = param['id'];
+    });
   }
 
+  goToSignup(): void {
+    this.router.navigate(['auth/signup']);
+  };
+
+  goToBookDetails(id: number, authorId: number): void {
+    this.router.navigate(['public/book-details', id, 'author', authorId], {queryParams: {name: 'kosta'}});
+  };
 }
