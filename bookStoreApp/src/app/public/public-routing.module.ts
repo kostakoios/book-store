@@ -7,14 +7,10 @@ import { AllBooksComponent } from './components/all-books/all-books.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 const root: Routes = [
-  {
-    path: 'public', component: PublicComponent, children: [
-      {path: '',redirectTo: 'all-books',pathMatch: 'full'},
-      {path: 'home', component: HomeComponent},
-      {path: 'all-books', component: AllBooksComponent},
-      {path: 'book-details/:id/author/:authorId', component: BookDetailsComponent}
-    ]
-  }
+  {path: '',redirectTo: 'all-books',pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: 'all-books/:id', component: AllBooksComponent},
+  {path: 'book-details/:id/author/:authorId', component: BookDetailsComponent}
 ];
 
 
