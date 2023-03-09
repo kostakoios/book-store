@@ -20,12 +20,4 @@ export class LoginComponent implements OnInit {
       this.id = param['id'];
     });
   }
-
-  goToSignup(): void {
-    this.router.navigate(['auth/signup']);
-  };
-
-  goToBookDetails(id: number, authorId: number): void {
-    this.router.navigate(['public/book-details', id, 'author', authorId], {queryParams: {name: 'kosta'}});
-  };
 }

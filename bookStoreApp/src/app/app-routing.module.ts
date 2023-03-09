@@ -11,7 +11,8 @@ import { BooksComponent } from './books/books.component';
 
 
 const roots: Routes = [
-  {path: ' ', component: HomeComponent, pathMatch: 'full'},
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'how-it-works', component: HowItWorksComponent},
   { 
@@ -25,7 +26,7 @@ const roots: Routes = [
     loadChildren: () => import('./user/user.module').then(x => x.UserModule)
   },
   {
-    path: 'public', 
+    path: 'books', 
     component: BooksComponent,
     loadChildren: () => import('./books/books.module').then(x => x.BooksModule)
   },
